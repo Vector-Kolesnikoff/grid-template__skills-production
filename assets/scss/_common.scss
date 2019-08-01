@@ -80,7 +80,7 @@ input:focus {
 
 .btn-main {
   border-color: $color-main;
-  background-color: rgba($color-main, 0.8);
+  background-color: $color-btn;
 
   @extend %btn-common;
 }
