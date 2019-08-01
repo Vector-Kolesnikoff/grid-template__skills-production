@@ -1,0 +1,69 @@
+.button,
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  -moz-appearance: button;
+  -webkit-appearance: button; }
+
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  display: inline-block;
+  padding: 2px 6px;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  color: color(button); }
+  .button::-moz-focus-inner,
+  button::-moz-focus-inner,
+  [type='button']::-moz-focus-inner,
+  [type='reset']::-moz-focus-inner,
+  [type='submit']::-moz-focus-inner {
+    border-style: none;
+    padding: 0; }
+  .button:-moz-focusring,
+  button:-moz-focusring,
+  [type='button']:-moz-focusring,
+  [type='reset']:-moz-focusring,
+  [type='submit']:-moz-focusring {
+    outline: 1px dotted ButtonText; }
+  .button:hover, .button:focus, .button:active,
+  button:hover,
+  button:focus,
+  button:active,
+  [type='button']:hover,
+  [type='button']:focus,
+  [type='button']:active,
+  [type='reset']:hover,
+  [type='reset']:focus,
+  [type='reset']:active,
+  [type='submit']:hover,
+  [type='submit']:focus,
+  [type='submit']:active {
+    text-decoration: none;
+    color: color(button); }
+
+.button[disabled],
+button[disabled],
+[disabled][type='button'],
+[disabled][type='reset'],
+[disabled][type='submit'] {
+  cursor: default;
+  color: color(button-disabled); }
+  .button[disabled]:hover,
+  button[disabled]:hover,
+  [disabled]:hover[type='button'],
+  [disabled]:hover[type='reset'],
+  [disabled]:hover[type='submit'], .button[disabled]:focus,
+  button[disabled]:focus,
+  [disabled]:focus[type='button'],
+  [disabled]:focus[type='reset'],
+  [disabled]:focus[type='submit'], .button[disabled]:active,
+  button[disabled]:active,
+  [disabled]:active[type='button'],
+  [disabled]:active[type='reset'],
+  [disabled]:active[type='submit'] {
+    color: color(button-disabled); }

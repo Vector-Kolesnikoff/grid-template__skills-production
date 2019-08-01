@@ -1,0 +1,103 @@
+.header-navbar {
+  position: relative;
+  display: grid;
+  justify-items: end;
+  align-items: center;    
+
+  &__hamburger {
+    width: 30px;
+    height: 22.5px;
+    position: relative;
+    margin: $gap 0;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    @include md-min {
+      display: none;
+    }
+    @include md {
+      display: block;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $color-light;
+      border-radius: 3px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0px;
+        transform-origin: left center;
+      }
+
+      &:nth-child(2) {
+        top: 9px;
+        transform-origin: left center;
+      }
+
+      &:nth-child(3) {
+        top: 18px;
+        transform-origin: left center;
+      }
+    }
+
+    &.active span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        top: -1.5px;
+        left: 4px;
+      }
+
+      &:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 19.5px;
+        left: 4px;
+      }
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0 (-$gap) 0 0;
+    padding: 0;
+
+    @include md-min {
+      display: grid;
+      width: 100%;
+      justify-content: flex-end;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    }
+    @include md {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 20px;
+      background-color: rgba($color-gray-dark, 0.9);
+      text-align: right;
+    }
+  }
+
+  &__item a {
+    display: block;
+    padding: $gap;
+    font-size: 1.125rem;
+    transition: color 0.5s;
+
+    &:hover,
+    &:focus {
+      color: $color-light;
+    }
+  }
+}

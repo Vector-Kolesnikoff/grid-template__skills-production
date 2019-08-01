@@ -1,0 +1,60 @@
+.footer {
+  background-color: $color-main;
+  text-align: center;
+  padding: 50px 20px 70px;
+
+  &__container {
+    @extend %container;
+  
+    &-social {
+      position: relative;
+      display: grid;
+      justify-content: center;
+      margin-bottom: $gap * 2;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      
+      &::after {
+        position: absolute;
+        width: 75px;
+        height: 2px;
+        bottom: -$gap;
+        left: calc(50% - 75px /2);
+        background-color: rgba($color-light, 0.1);
+
+        content: "";
+      }
+
+      a {
+        display: block;
+        transition: color 0.5s;
+        padding: $gap / 2;
+
+        &:hover,
+        &:focus {
+          color: $color-accent;
+        }
+      }
+
+      .fa {
+        font-size: 36px;
+      }
+    }
+
+    &-title {
+      span {
+        &:nth-of-type(1) {
+          font-weight: 100;
+          letter-spacing: 0.33em;
+          margin-right: -0.5em;
+        }
+  
+        &:nth-of-type(2) {
+          font-weight: 700;
+          color: $color-gray-light;
+          letter-spacing: 0.05em;
+          margin-right: -0.3em;
+        }
+      }
+    }
+  }
+}

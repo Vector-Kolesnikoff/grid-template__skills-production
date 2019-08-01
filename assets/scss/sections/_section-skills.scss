@@ -1,0 +1,184 @@
+.skills {
+  
+  @include sm-min {
+    padding: ($gap / 2) ($gap / 2) ($gap * 2);
+  }
+  @include sm {
+    padding: $gap;
+  }
+
+  &__container {
+    display: grid;
+    padding-bottom: $gap;
+
+    @include lg-min {
+      grid-gap: $gap / 2;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:  "a1 a1 a2 a3" 
+                            "a4 a5 a5 a6" 
+                            "a7 a8 a9 a6";
+    }
+    @include lg-md {
+      grid-gap: $gap / 2;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:  "a1 a1 a2" 
+                            "a3 a4 a4" 
+                            "a5 a5 a6" 
+                            "a7 a8 a6" 
+                            "a7 a9 a9";
+    }
+    @include md-sm {
+      grid-gap: $gap / 2;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:  "a1 a2" 
+                            "a3 a2" 
+                            "a4 a4" 
+                            "a5 a6" 
+                            "a5 a7" 
+                            "a8 a9";
+    }
+    @include sm {
+      grid-gap: $gap;
+      grid-template-columns: 1fr;
+      grid-template-areas:  "a1" 
+                            "a2" 
+                            "a3" 
+                            "a4" 
+                            "a5" 
+                            "a6" 
+                            "a7" 
+                            "a8" 
+                            "a9";
+    }
+  }
+
+  &__button {
+    @extend %btn-wrapper;
+  }
+}
+
+.skill-item {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  padding: $gap;
+  align-items: center;
+  justify-items: center;
+
+  @media (min-height: 691px) {
+    min-height: calc(33.33vh - #{$gap} * 0.66);
+  }
+
+  @media (max-height: 690px) {
+    min-height: calc(230px - #{$gap} * 0.66);
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.5s;
+    opacity: 0.8;
+    background-color: $color-main;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.5s;
+    background-color: $color-main;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  &__title {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    letter-spacing: 0.1em;
+
+    @include md-min {
+      font-size: 1.25rem;
+    }
+    @include md {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+    height: 100%;
+    padding: $gap;
+    transition: color 0.5s;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:nth-of-type(1) {
+    grid-area: a1
+  }
+  &:nth-of-type(2) {
+    grid-area: a2
+  }
+  &:nth-of-type(3) {
+    grid-area: a3
+  }
+  &:nth-of-type(4) {
+    grid-area: a4
+  }
+  &:nth-of-type(5) {
+    grid-area: a5
+  }
+  &:nth-of-type(5) {
+    grid-area: a5
+  }
+  &:nth-of-type(6) {
+    grid-area: a6
+  }
+  &:nth-of-type(7) {
+    grid-area: a7
+  }
+  &:nth-of-type(8) {
+    grid-area: a8
+  }
+  &:nth-of-type(9) {
+    grid-area: a9
+  }
+
+  &:hover {
+    .skill-item__overlay {
+      opacity: 0.95 !important;
+    }
+    .skill-item__image {
+      transform: scale(1.1);
+    }
+    .skill-item__link {
+      color: $color-accent;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

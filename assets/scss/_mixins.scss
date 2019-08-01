@@ -1,0 +1,15 @@
+@mixin btn-start {
+  display: inline-block;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 1.125rem;
+  transition: background-color 0.5s;
+
+  border: 2px solid $color-light;
+  background-color: rgba(255, 255, 255, 0.1);
+    
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+  }
+}

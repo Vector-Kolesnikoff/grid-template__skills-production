@@ -1,0 +1,104 @@
+.section-form {
+  background-color: $color-main;
+  padding: ($gap * 1.5) 0;
+
+  &__container {
+    display: grid;
+    grid-gap: $gap;
+    grid-gap: $gap;
+    
+    @include lg-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    @extend %container;
+
+    &-name,
+    &-email {
+      width: 100%;
+      height: 60px;
+      background-color: $color-input;
+      // font-family: $font-main;
+      font-size: 1.125rem;
+      letter-spacing: 0.15em;
+      color: $color-light;
+      align-content: center;
+      padding-left: $gap; //30.7px;
+      margin-right: $gap; //19.5px;
+      border-left: 2px solid $color-input;
+      border-top: 2px solid $color-input;
+      border-right: 2px solid $color-input;
+      border-bottom: 2px solid $color-border;
+      transition: background-color 0.5s, border-color 0.5s;
+      &::-webkit-input-placeholder {
+        color: $color-placeholder;
+        font-size: 1.125rem;
+      }
+      &::-moz-placeholder {
+        color: $color-placeholder;
+        font-size: 1.125rem;
+      }/* Firefox 19+ */
+      &:-moz-placeholder {
+        color: $color-placeholder;
+        font-size: 1.125rem;
+      }/* Firefox 18- */
+      &:-ms-input-placeholder {
+        color: $color-placeholder;
+        font-size: 1.125rem;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $color-gray-dark;
+        border-left-color: $color-placeholder;
+        border-top-color: $color-placeholder;
+        border-right-color: $color-placeholder;
+        border-bottom-color: $color-gray-light;
+        &::-webkit-input-placeholder {
+          color: $color-gray-light;
+        }
+        &::-moz-placeholder {
+          color: $color-gray-light;
+        }/* Firefox 19+ */
+        &:-moz-placeholder {
+          color: $color-gray-light;
+        }/* Firefox 18- */
+        &:-ms-input-placeholder {
+          color: $color-gray-light;
+        }
+      }
+    }
+
+    &-name {
+      @include md-sm {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &-button {
+      .btn-form {
+        @extend %btn-common;
+
+        width: 100%;
+        height: 60px;
+        border-left: 2px solid $color-input;
+        border-top: 2px solid $color-input;
+        border-right: 2px solid $color-input;
+        border-bottom: 2px solid $color-gray;
+        background-color: $color-gray-dark;
+        
+        &:hover,
+        &:focus {
+          background-color: $color-accent;
+          border-color: $color-light;
+        }
+      }
+    }
+  }
+}

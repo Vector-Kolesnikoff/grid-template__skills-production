@@ -1,0 +1,86 @@
+html {
+  box-sizing: border-box;
+}
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: $font-main;
+  font-size: $font-size;
+  color: $color-gray;
+}
+
+h1 {
+  font-family: $font-header;
+  font-weight: 300;
+  line-height: 1.2em;
+
+  @include lg-min {
+    font-size: 3.75rem;
+  }
+  @include lg-md {
+    font-size: 2.5rem;
+  }
+  @include md {
+    font-size: 1.875rem;
+  }
+}
+
+h2 {
+  color: $color-main;
+  font-family: $font-header;
+  line-height: 1.2em;
+  letter-spacing: 0.1em;
+
+  @include lg-min {
+    margin-bottom: $gap * 2.8;
+    font-size: 2.5rem;
+  }
+  @include lg-md {
+    margin-bottom: $gap * 2.1;
+    font-size: 2rem;
+  }
+  @include md-sm {
+    margin-bottom: $gap * 1.8;
+    font-size: 1.5rem;
+  }
+  @include sm {
+    text-align: center;
+    margin-bottom: $gap * 1.8;
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  color: $color-gray;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+}
+
+a {
+  text-decoration: none;
+  color: $color-light;
+}
+
+p {
+  color: $color-gray;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btn {
+  border-color: $color-light;
+  background-color: rgba($color-light, 0.1);
+
+  @extend %btn-common;
+}
+
+.btn-main {
+  border-color: $color-main;
+  background-color: rgba($color-main, 0.8);
+
+  @extend %btn-common;
+}
